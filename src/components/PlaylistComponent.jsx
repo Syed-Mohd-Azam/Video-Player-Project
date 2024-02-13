@@ -4,6 +4,7 @@ import { YOUTUBE_API } from "../constants/constants";
 import { useEffect, useState } from "react";
 const PlaylistComponent = () => {
   const [videos, setVideos] = useState([]);
+  const [search, setSearch] = useState("");
   useEffect(() => {
     fetchVideos();
   }, []);
@@ -15,7 +16,7 @@ const PlaylistComponent = () => {
   return (
     <>
       <section className="w-full">
-        <SearchContainer />
+        <SearchContainer search={search} setSearch={setSearch} />
         <PlayList videos={videos} />
       </section>
     </>

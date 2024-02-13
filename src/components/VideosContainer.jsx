@@ -2,10 +2,11 @@
 // eslint-disable-next-line react/prop-types
 import VideoCard from "./VideoCard";
 const VideosContainer = ({ videos: { items } }) => {
+  console.log(items);
   return (
     <>
       <section className="flex flex-wrap gap-8 justify-center items-center pb-20 pt-10">
-        {items.map((item) => (
+        {items?.map((item) => (
           <VideoCard key={item?.id} item={item} />
         ))}
       </section>
