@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import darkReducer from "./darkSlice";
 const store = configureStore({
-  reducers: {
+  reducer: {
     dark: darkReducer,
   },
 });
