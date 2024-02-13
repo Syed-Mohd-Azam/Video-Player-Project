@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import Shimmer from "./Shimmer";
+import VideosContainer from "./VideosContainer";
 const PlayList = ({ videos }) => {
   return (
     <section>
@@ -15,7 +16,9 @@ const PlayList = ({ videos }) => {
             <Shimmer />
           </>
         ) : (
-          <></>
+          <>
+            <VideosContainer videos={videos} />
+          </>
         )}
       </article>
     </section>
