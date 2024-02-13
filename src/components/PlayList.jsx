@@ -1,16 +1,6 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
 import Shimmer from "./Shimmer";
-import { YOUTUBE_API } from "../constants/constants";
-const PlayList = () => {
-  const [list, setList] = useState([]);
-  useEffect(() => {
-    fetchVideos();
-  }, []);
-  const fetchVideos = async () => {
-    const data = await fetch(YOUTUBE_API);
-    const jsonData = await data.json();
-    setList(jsonData);
-  };
+const PlayList = ({ videos }) => {
   return (
     <section>
       <article className="py-5 flex justify-center items-center">
@@ -20,7 +10,7 @@ const PlayList = () => {
         </h1>
       </article>
       <article>
-        {list.length === 0 ? (
+        {videos?.length === 0 ? (
           <>
             <Shimmer />
           </>
