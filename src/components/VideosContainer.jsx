@@ -4,7 +4,7 @@ import VideoCard from "./VideoCard";
 const VideosContainer = ({ videos: { items } }) => {
   return (
     <>
-      <section>
+      <section className="flex flex-wrap gap-x-8 gap-y-8">
         {items.map((item) => (
           <VideoCard key={item?.id} item={item} />
         ))}
