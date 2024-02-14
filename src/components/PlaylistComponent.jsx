@@ -11,7 +11,7 @@ const PlaylistComponent = () => {
   const fetchVideos = async () => {
     const data = await fetch(YOUTUBE_API);
     const jsonData = await data.json();
-    setVideos(jsonData);
+    setVideos(jsonData?.items);
   };
   return (
     <>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 const VideoCard = ({
-  item: {
+  video: {
     id,
     snippet: {
       title,
