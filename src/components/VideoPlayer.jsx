@@ -21,7 +21,7 @@ const VideoPlayer = () => {
     return () => clearInterval(intervalId);
   }, []);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [volume, setVolume] = useState(1);
+  const [volume, setVolume] = useState(0.5);
   const playerRef = useRef(null);
   const [muted, setMuted] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -124,6 +124,7 @@ const VideoPlayer = () => {
           playing={isPlaying}
           onProgress={handleProgress}
           onDuration={handleDuration}
+          muted={muted}
         />
         <section className="bg-purple-50 rounded-xl w-full p-5 mt-2 flex justify-between">
           <article className="flex gap-2 justify-center items-center">
@@ -156,7 +157,7 @@ const VideoPlayer = () => {
               type="range"
               min={0}
               max={1}
-              step={0.01}
+              step={0.1}
               value={volume}
               onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
             />
