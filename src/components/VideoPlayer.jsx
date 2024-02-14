@@ -9,6 +9,7 @@ import { useRef } from "react";
 import { RiFullscreenFill } from "react-icons/ri";
 import { BiSolidVolumeMute } from "react-icons/bi";
 import { GoUnmute } from "react-icons/go";
+import { IoPlaySkipForwardSharp } from "react-icons/io5";
 const VideoPlayer = () => {
   useEffect(() => {
     // Update time every second
@@ -21,6 +22,7 @@ const VideoPlayer = () => {
     return () => clearInterval(intervalId);
   }, []);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [speed, setSpeed] = useState(1);
   const [volume, setVolume] = useState(0.5);
   const playerRef = useRef(null);
   const [muted, setMuted] = useState(false);
@@ -80,6 +82,10 @@ const VideoPlayer = () => {
   const handleProgress = (progress) => {
     setCurrentTime(progress.playedSeconds);
   };
+  const handleSpeedChange = (newSpeed) => {
+    setSpeed(newSpeed);
+    playerRef.current.playbackRate = newSpeed;
+  };
   const handleMuteToggle = () => {
     setMuted(!muted);
 
@@ -125,49 +131,64 @@ const VideoPlayer = () => {
           onProgress={handleProgress}
           onDuration={handleDuration}
           muted={muted}
+          playbackRate={speed}
         />
-        <section className="bg-purple-50 rounded-xl w-full p-5 mt-2 flex justify-between">
-          <article className="flex gap-2 justify-center items-center">
-            <button onClick={() => setIsPlaying(!isPlaying)}>
-              {isPlaying ? (
-                <CiPause1 className="text-sky-700 w-6 h-6" />
-              ) : (
-                <CiPlay1 className="text-sky-700 w-6 h-6" />
-              )}
-            </button>
-            <MdOutlineKeyboardDoubleArrowLeft
-              className="w-6 h-6 text-sky-700 hover:cursor-pointer"
-              onClick={() => handleSeek(-10)}
-            />
-            <MdOutlineKeyboardDoubleArrowRight
-              className="w-6 h-6 text-sky-700 hover:cursor-pointer"
-              onClick={() => handleSeek(10)}
-            />
-            <span className="text-sky-700 font-semibold">
-              {formatTime(currentTime)} / {formatTime(duration)}
-            </span>
-            <button onClick={handleMuteToggle} className="px-2">
-              {muted ? (
-                <BiSolidVolumeMute className="text-sky-700 w-6 h-6" />
-              ) : (
-                <GoUnmute className="text-sky-700 w-6 h-6" />
-              )}
-            </button>
-            <input
-              type="range"
-              min={0}
-              max={1}
-              step={0.1}
-              value={volume}
-              onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
-            />
+        <section className="bg-purple-50 rounded-xl w-full p-5 mt-2 flex gap-2 justify-center items-center ">
+          <button onClick={() => setIsPlaying(!isPlaying)}>
+            {isPlaying ? (
+              <CiPause1 className="text-sky-700 w-6 h-6" />
+            ) : (
+              <CiPlay1 className="text-sky-700 w-6 h-6" />
+            )}
+          </button>
+          <MdOutlineKeyboardDoubleArrowLeft
+            className="w-6 h-6 text-sky-700 hover:cursor-pointer"
+            onClick={() => handleSeek(-10)}
+          />
+          <MdOutlineKeyboardDoubleArrowRight
+            className="w-6 h-6 text-sky-700 hover:cursor-pointer"
+            onClick={() => handleSeek(10)}
+          />
+          <span className="text-sky-700 font-semibold">
+            {formatTime(currentTime)} / {formatTime(duration)}
+          </span>
+          <button onClick={handleMuteToggle} className="px-2">
+            {muted ? (
+              <BiSolidVolumeMute className="text-sky-700 w-6 h-6" />
+            ) : (
+              <GoUnmute className="text-sky-700 w-6 h-6" />
+            )}
+          </button>
+          <input
+            className="hover:cursor-pointer"
+            type="range"
+            min={0}
+            max={1}
+            step={0.1}
+            value={volume}
+            onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
+          />
+          <article className="flex flex-row gap-2 justify-center items-center">
+            <IoPlaySkipForwardSharp className="w-6 h-6 text-sky-700" />
+            <select
+              className="text-sky-700 font-semibold border-none outline-none rounded-xl p-1"
+              value={speed}
+              onChange={(e) => handleSpeedChange(parseFloat(e.target.value))}
+            >
+              <option value={0.5}>0.5x</option>
+              <option value={0.75}>0.75x</option>
+              <option value={1}>1x</option>
+              <option value={1.25}>1.25x</option>
+              <option value={1.5}>1.5x</option>
+              <option value={2}>2x</option>
+              <option value={2.5}>2.5x</option>
+              <option value={3}>3x</option>
+            </select>
           </article>
-          <article>
-            <RiFullscreenFill
-              className="text-sky-700 w-6 h-6 hover:cursor-pointer"
-              onClick={() => handleFullScreen()}
-            />
-          </article>
+          <RiFullscreenFill
+            className="text-sky-700 w-6 h-6 hover:cursor-pointer ml-2"
+            onClick={() => handleFullScreen()}
+          />
         </section>
       </section>
     </>
