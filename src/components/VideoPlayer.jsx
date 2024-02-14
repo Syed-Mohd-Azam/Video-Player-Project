@@ -1,7 +1,7 @@
 const VideoPlayer = () => {
   return (
     <>
-      <section></section>
+      <section>Video Player</section>
     </>
   );
 };
