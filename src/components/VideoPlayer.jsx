@@ -7,6 +7,8 @@ import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
 import { useRef } from "react";
 import { RiFullscreenFill } from "react-icons/ri";
+import { BiSolidVolumeMute } from "react-icons/bi";
+import { GoUnmute } from "react-icons/go";
 const VideoPlayer = () => {
   useEffect(() => {
     // Update time every second
@@ -19,7 +21,9 @@ const VideoPlayer = () => {
     return () => clearInterval(intervalId);
   }, []);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [volume, setVolume] = useState(1);
   const playerRef = useRef(null);
+  const [muted, setMuted] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [isFullScreen, setIsFullScreen] = useState(false);
@@ -33,6 +37,14 @@ const VideoPlayer = () => {
       showinfo: 0,
     },
   };
+
+  const handleVolumeChange = (newVolume) => {
+    if (newVolume === 0) {
+      setMuted(true);
+    }
+    setVolume(newVolume);
+  };
+
   const handleFullScreen = () => {
     if (!isFullScreen) {
       // Enter full screen
@@ -66,7 +78,15 @@ const VideoPlayer = () => {
   const handleProgress = (progress) => {
     setCurrentTime(progress.playedSeconds);
   };
+  const handleMuteToggle = () => {
+    setMuted(!muted);
 
+    if (!muted) {
+      setVolume(0);
+    } else {
+      setVolume(0.5);
+    }
+  };
   const handleDuration = (duration) => {
     setDuration(duration);
   };
@@ -96,6 +116,7 @@ const VideoPlayer = () => {
           className="h-8 md:h-28 lg:h-auto hover:cursor-pointer"
           url={"https://www.youtube.com/watch?v=" + videoId}
           ref={playerRef}
+          volume={volume}
           controls={false}
           config={youtubeConfig}
           playing={isPlaying}
@@ -106,26 +127,41 @@ const VideoPlayer = () => {
           <article className="flex gap-2 justify-center items-center">
             <button onClick={() => setIsPlaying(!isPlaying)}>
               {isPlaying ? (
-                <CiPause1 className="text-sky-400 w-6 h-6" />
+                <CiPause1 className="text-sky-700 w-6 h-6" />
               ) : (
-                <CiPlay1 className="text-sky-400 w-6 h-6" />
+                <CiPlay1 className="text-sky-700 w-6 h-6" />
               )}
             </button>
             <MdOutlineKeyboardDoubleArrowLeft
-              className="w-6 h-6 text-sky-400 hover:cursor-pointer"
+              className="w-6 h-6 text-sky-700 hover:cursor-pointer"
               onClick={() => handleSeek(-10)}
             />
             <MdOutlineKeyboardDoubleArrowRight
-              className="w-6 h-6 text-sky-400 hover:cursor-pointer"
+              className="w-6 h-6 text-sky-700 hover:cursor-pointer"
               onClick={() => handleSeek(10)}
             />
-            <span className="text-sky-400 font-semibold">
+            <span className="text-sky-700 font-semibold">
               {formatTime(currentTime)} / {formatTime(duration)}
             </span>
+            <button onClick={handleMuteToggle} className="px-2">
+              {muted ? (
+                <BiSolidVolumeMute className="text-sky-700 w-6 h-6" />
+              ) : (
+                <GoUnmute className="text-sky-700 w-6 h-6" />
+              )}
+            </button>
+            <input
+              type="range"
+              min={0}
+              max={1}
+              step={0.01}
+              value={volume}
+              onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
+            />
           </article>
           <article>
             <RiFullscreenFill
-              className="text-sky-400 w-6 h-6 hover:cursor-pointer"
+              className="text-sky-700 w-6 h-6 hover:cursor-pointer"
               onClick={() => handleFullScreen()}
             />
           </article>
