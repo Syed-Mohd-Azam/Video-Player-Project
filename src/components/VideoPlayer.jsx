@@ -41,8 +41,10 @@ const VideoPlayer = () => {
   const handleVolumeChange = (newVolume) => {
     if (newVolume === 0) {
       setMuted(true);
+    } else {
+      setVolume(newVolume);
+      setMuted(false);
     }
-    setVolume(newVolume);
   };
 
   const handleFullScreen = () => {
