@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 import Shimmer from "./Shimmer";
 import VideosContainer from "./VideosContainer";
-const PlayList = ({ videos }) => {
+// eslint-disable-next-line no-unused-vars
+const PlayList = ({ videos, filterVideos }) => {
+  console.log(filterVideos);
   return (
     <section>
       <article className="py-5 flex justify-center items-center">
@@ -17,7 +19,7 @@ const PlayList = ({ videos }) => {
           </>
         ) : (
           <>
-            <VideosContainer videos={videos} />
+            <VideosContainer filterVideos={filterVideos} />
           </>
         )}
       </article>
