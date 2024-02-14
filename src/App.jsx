@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <section className={dark === true ? "bg-[#192734]" : "bg-white"}>
-        <section className="w-4/5 min-h-screen mx-auto">
+        <section className="w-full min-h-screen mx-auto">
           <RouterProvider router={router} />
         </section>
       </section>

@@ -107,6 +107,9 @@ const VideoPlayer = () => {
       playerRef.current.seekTo(currentTime + seconds);
     }
   };
+  const handleEnded = () => {
+    setIsPlaying(false);
+  };
   const formatTime = (timeInSeconds) => {
     const hours = Math.floor(timeInSeconds / 3600);
     const minutes = Math.floor((timeInSeconds % 3600) / 60);
@@ -119,7 +122,7 @@ const VideoPlayer = () => {
   };
   return (
     <>
-      <section className="w-4/5 lg:w-3/5 mx-auto flex flex-col justify-center items-center py-10">
+      <section className="w-full md:container md:mx-auto flex flex-col justify-center items-center py-10">
         <ReactPlayer
           className="h-8 md:h-28 lg:h-auto hover:cursor-pointer"
           url={"https://www.youtube.com/watch?v=" + videoId}
@@ -132,8 +135,9 @@ const VideoPlayer = () => {
           onDuration={handleDuration}
           muted={muted}
           playbackRate={speed}
+          onEnded={handleEnded}
         />
-        <section className="bg-purple-50 rounded-xl w-full p-5 mt-2 flex gap-2 justify-center items-center ">
+        <section className="bg-purple-50 container mx-auto rounded-xl w-full p-5 mt-2 flex gap-2 justify-center items-center ">
           <button onClick={() => setIsPlaying(!isPlaying)}>
             {isPlaying ? (
               <CiPause1 className="text-sky-700 w-6 h-6" />
@@ -149,18 +153,18 @@ const VideoPlayer = () => {
             className="w-6 h-6 text-sky-700 hover:cursor-pointer"
             onClick={() => handleSeek(10)}
           />
-          <span className="text-sky-700 font-semibold">
+          <span className="hidden lg:block text-sky-700 font-semibold  text-base lg:visible">
             {formatTime(currentTime)} / {formatTime(duration)}
           </span>
           <button onClick={handleMuteToggle} className="px-2">
             {muted ? (
-              <BiSolidVolumeMute className="text-sky-700 w-6 h-6" />
+              <BiSolidVolumeMute className="text-sky-700 w-3 h-3 lg:w-6 lg:h-6" />
             ) : (
-              <GoUnmute className="text-sky-700 w-6 h-6" />
+              <GoUnmute className="text-sky-700 lg:w-6 lg:h-6 w-3 h-3" />
             )}
           </button>
           <input
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer hidden md:block"
             type="range"
             min={0}
             max={1}
