@@ -122,7 +122,7 @@ const VideoPlayer = () => {
   };
   return (
     <>
-      <section className="w-full md:container md:mx-auto flex flex-col justify-center items-center py-10">
+      <section className="container mx-auto flex flex-col justify-center items-center py-10">
         <ReactPlayer
           className="h-8 md:h-28 lg:h-auto hover:cursor-pointer"
           url={"https://www.youtube.com/watch?v=" + videoId}
