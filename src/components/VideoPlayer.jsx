@@ -137,7 +137,7 @@ const VideoPlayer = () => {
           playbackRate={speed}
           onEnded={handleEnded}
         />
-        <section className="bg-purple-50 container mx-auto rounded-xl w-full p-5 mt-2 flex gap-2 justify-center items-center ">
+        <section className="bg-purple-50 container mx-auto rounded-xl md:w-4/5 lg:w-3/5 p-5 mt-2 flex gap-2 justify-center items-center ">
           <button onClick={() => setIsPlaying(!isPlaying)}>
             {isPlaying ? (
               <CiPause1 className="text-sky-700 w-6 h-6" />
