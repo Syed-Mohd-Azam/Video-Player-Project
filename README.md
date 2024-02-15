@@ -42,3 +42,6 @@ This is a React-based video player application built with Vite. The app fetches 
 Navigate through the application and explore the various video playback features.
 Adjust volume, enter full-screen mode, and toggle between mute and unmute.
 Explore videos based on your country, and switch between day and night modes.
+## Project Link
+
+Project Link : https://mellow-piroshki-4e2159.netlify.app/
