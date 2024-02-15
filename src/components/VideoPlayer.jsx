@@ -156,21 +156,25 @@ const VideoPlayer = () => {
             </>
           )}
         </section>
-        <ReactPlayer
-          className="h-8 md:h-28 lg:h-auto hover:cursor-pointer"
-          url={"https://www.youtube.com/watch?v=" + videoId}
-          ref={playerRef}
-          volume={volume}
-          controls={false}
-          config={youtubeConfig}
-          playing={isPlaying}
-          onProgress={handleProgress}
-          onDuration={handleDuration}
-          muted={muted}
-          playbackRate={speed}
-          onEnded={handleEnded}
-        />
-        <section className="bg-purple-50 container mx-auto rounded-xl md:w-4/5 lg:w-3/5 p-5 mt-2 flex gap-2 justify-center items-center ">
+        <section className=" w-full lg:container ">
+          <ReactPlayer
+            className="w-4/5 md:w-3/5 lg:h-96 sm:h-72 h-48 container mx-auto  hover:cursor-pointer "
+            url={"https://www.youtube.com/watch?v=" + videoId}
+            ref={playerRef}
+            width=""
+            height=""
+            volume={volume}
+            controls={false}
+            config={youtubeConfig}
+            playing={isPlaying}
+            onProgress={handleProgress}
+            onDuration={handleDuration}
+            muted={muted}
+            playbackRate={speed}
+            onEnded={handleEnded}
+          />
+        </section>
+        <section className="bg-purple-50 container mx-auto rounded-xl w-4/5 md:w-4/5 lg:w-3/5 p-5 mt-2 flex gap-2 items-center justify-center">
           <button onClick={() => setIsPlaying(!isPlaying)}>
             {isPlaying ? (
               <CiPause1 className="text-sky-700 w-6 h-6" />
