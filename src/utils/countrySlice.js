@@ -3,10 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const countrySlice = createSlice({
   name: "country",
   initialState: {
-    countryCode: "IN",
+    countryToken: "IN",
   },
-  countryCode: (state, action) => {
-    state.countryCode = action.payload;
+  reducers: {
+    countryCode: (state, action) => {
+      state.countryToken = action?.payload;
+    },
   },
 });
 export const { countryCode } = countrySlice.actions;
