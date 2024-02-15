@@ -1,15 +1,18 @@
 import SearchContainer from "./SearchContainer";
+import Country from "./Country";
 import PlayList from "./PlayList";
 import { YOUTUBE_API } from "../constants/constants";
+import { API_KEY } from "../constants/constants";
 import { useEffect, useState } from "react";
 const PlaylistComponent = () => {
+  const [country, setCountry] = useState("IN");
   const [videos, setVideos] = useState([]);
   const [filterVideos, setFilterVideos] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    fetchVideos();
+    fetchVideos(country);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [country]);
   useEffect(() => {
     searchVideos(search);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -27,8 +30,8 @@ const PlaylistComponent = () => {
       );
     }
   };
-  const fetchVideos = async () => {
-    const data = await fetch(YOUTUBE_API);
+  const fetchVideos = async (country) => {
+    const data = await fetch(YOUTUBE_API + country + API_KEY);
     const jsonData = await data.json();
     setVideos(jsonData?.items);
     setFilterVideos(jsonData?.items);
@@ -37,6 +40,7 @@ const PlaylistComponent = () => {
     <>
       <section className="w-full">
         <SearchContainer search={search} setSearch={setSearch} />
+        <Country setCountry={setCountry} />
         <PlayList videos={videos} filterVideos={filterVideos} />
       </section>
     </>
