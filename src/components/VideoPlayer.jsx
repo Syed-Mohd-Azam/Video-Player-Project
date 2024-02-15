@@ -42,9 +42,14 @@ const VideoPlayer = () => {
   const videoId = search.get("v");
   console.log(videoId);
   const youtubeConfig = {
-    playerVars: {
-      modestbranding: 1,
-      showinfo: 0,
+    youtube: {
+      playerVars: {
+        autoplay: 1,
+        controls: 0,
+        modestbranding: 0,
+        rel: 0,
+        showinfo: 0,
+      },
     },
   };
   const handleToggle = () => {
