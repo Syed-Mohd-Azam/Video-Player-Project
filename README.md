@@ -1,4 +1,4 @@
-# Video Player Application
+# Video Player Application 🚀
 
 This is a React-based video player application built with Vite. The app fetches videos from the YouTube API and provides a customizable and responsive video player experience. It incorporates various features, including custom video controls, volume adjustments, full-screen options, mute/unmute functionality, country-wise video fetching, and a day/night mode.
 
