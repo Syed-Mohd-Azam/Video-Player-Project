@@ -29,8 +29,8 @@ This is a React-based video player application built with Vite. The app fetches 
    
 2. Install dependencies:
    
-   1- cd video-player-app
-   2- npm install
+   1- cd video-player-app.
+   2- npm install.
 
 3. Start the application:
    
