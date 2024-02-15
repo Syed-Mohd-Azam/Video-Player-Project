@@ -25,11 +25,11 @@ This is a React-based video player application built with Vite. The app fetches 
 1. Clone the repository:
 
    ```bash```
-   git clone https://github.com/your-username/video-player-app.git
+   git clone https://github.com/Syed-Mohd-Azam/Video-Player-Project.git
    
 2. Install dependencies:
    
-   1- cd video-player-app.    
+   1- cd Video-Player-Project.    
    2- npm install.
 
 3. Start the application:
