@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
+import { BsToggleOn } from "react-icons/bs";
+import { FaRegMoon } from "react-icons/fa";
+import { IoSunnyOutline } from "react-icons/io5";
+import { BsToggleOff } from "react-icons/bs";
 import { useSearchParams } from "react-router-dom";
 import { CiPlay1 } from "react-icons/ci";
 import { CiPause1 } from "react-icons/ci";
@@ -10,7 +14,11 @@ import { RiFullscreenFill } from "react-icons/ri";
 import { BiSolidVolumeMute } from "react-icons/bi";
 import { GoUnmute } from "react-icons/go";
 import { IoPlaySkipForwardSharp } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleMode } from "../utils/darkSlice";
 const VideoPlayer = () => {
+  const dark = useSelector((state) => state?.dark?.darkMode);
+  const dispatch = useDispatch();
   useEffect(() => {
     // Update time every second
     const intervalId = setInterval(() => {
@@ -39,7 +47,9 @@ const VideoPlayer = () => {
       showinfo: 0,
     },
   };
-
+  const handleToggle = () => {
+    dispatch(toggleMode());
+  };
   const handleVolumeChange = (newVolume) => {
     if (newVolume === 0) {
       setMuted(true);
@@ -123,6 +133,29 @@ const VideoPlayer = () => {
   return (
     <>
       <section className="container mx-auto flex flex-col justify-center items-center py-10">
+        <section className="w-full h-24 mb-4 text-white flex justify-end px-5 items-center">
+          {dark ? (
+            <>
+              <article className="flex gap-4">
+                <BsToggleOn
+                  className="w-8 h-8 text-blue-400"
+                  onClick={handleToggle}
+                />
+                <FaRegMoon className="w-8 h-8 text-blue-400" />
+              </article>
+            </>
+          ) : (
+            <>
+              <article className="flex gap-4">
+                <BsToggleOff
+                  className="w-8 h-8 text-black"
+                  onClick={handleToggle}
+                />
+                <IoSunnyOutline className="w-8 h-8 text-black" />
+              </article>
+            </>
+          )}
+        </section>
         <ReactPlayer
           className="h-8 md:h-28 lg:h-auto hover:cursor-pointer"
           url={"https://www.youtube.com/watch?v=" + videoId}
