@@ -133,7 +133,7 @@ const VideoPlayer = () => {
   return (
     <>
       <section className="container mx-auto flex flex-col justify-center items-center py-10">
-        <section className="w-full h-24 mb-4 text-white flex justify-end px-5 items-center">
+        <section className="w-full  mb-4 text-white flex justify-end px-5 items-center">
           {dark ? (
             <>
               <article className="flex gap-4">
