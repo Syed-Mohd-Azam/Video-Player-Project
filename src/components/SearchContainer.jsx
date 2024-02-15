@@ -14,18 +14,18 @@ const SearchContainer = ({ search, setSearch }) => {
   };
   return (
     <>
-      <section
-        className="flex gap-8 p-8  justify-end items-center"
-        onClick={handleToggle}
-      >
+      <section className="flex gap-8 p-8  justify-end items-center">
         {dark === true ? (
           <>
-            <BsToggleOn className="w-8 h-8 text-blue-400" />
+            <BsToggleOn
+              className="w-8 h-8 text-blue-400"
+              onClick={handleToggle}
+            />
             <FaRegMoon className="w-8 h-8 text-blue-400" />
           </>
         ) : (
           <>
-            <BsToggleOff className="w-8 h-8" />
+            <BsToggleOff className="w-8 h-8" onClick={handleToggle} />
             <IoSunnyOutline className="w-8 h-8" />
           </>
         )}
