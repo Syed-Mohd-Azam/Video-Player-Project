@@ -13,7 +13,7 @@ This is a React-based video player application built with Vite. The app fetches 
 ## Features
 
 - **Custom Video Controls:** Implemented custom controls for video playback.
-- AutoPlay : Implemented autoplay functionality, video starts automatically and pauses whenever video ends.
+- Autoplay : Implemented autoplay functionality, video starts automatically and pauses whenever video ends.
 - **Volume Adjustment:** Users can adjust the volume according to their preferences.
 - **Full-Screen Mode:** Provides a full-screen option for an immersive video experience.
 - **Mute/Unmute:** Allows users to mute or unmute the video.
