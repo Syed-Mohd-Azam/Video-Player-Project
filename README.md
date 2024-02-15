@@ -12,12 +12,12 @@ This is a React-based video player application built with Vite. The app fetches 
 
 ## Features
 
-Custom Controls: Tailored video playback controls for an intuitive user experience.
-Autoplay Functionality: Implemented autoplay, allowing videos to start automatically and pause when they reach the end.
-Responsive Design: Ensures a smooth viewing experience across various devices.
-Dynamic Video Fetching: Fetches and displays videos based on the user's country, providing localized content.
-Advanced Controls: Users can adjust volume, toggle full-screen mode, and mute/unmute videos.
-Day/Night Mode: Enhances user comfort with a toggleable day and night mode.
+- Custom Controls: Tailored video playback controls for an intuitive user experience.
+- Autoplay Functionality: Implemented autoplay, allowing videos to start automatically and pause when they reach the end.
+- Responsive Design: Ensures a smooth viewing experience across various devices.
+- Dynamic Video Fetching: Fetches and displays videos based on the user's country, providing localized content.
+- Advanced Controls: Users can adjust volume, toggle full-screen mode, and mute/unmute videos.
+- Day/Night Mode: Enhances user comfort with a toggleable day and night mode.
 
 ## Setup
 
