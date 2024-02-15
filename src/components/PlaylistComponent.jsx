@@ -4,8 +4,9 @@ import PlayList from "./PlayList";
 import { YOUTUBE_API } from "../constants/constants";
 import { API_KEY } from "../constants/constants";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 const PlaylistComponent = () => {
-  const [country, setCountry] = useState("IN");
+  const country = useSelector((state) => state?.country?.countryCode);
   const [videos, setVideos] = useState([]);
   const [filterVideos, setFilterVideos] = useState([]);
   const [search, setSearch] = useState("");
@@ -40,7 +41,7 @@ const PlaylistComponent = () => {
     <>
       <section className="w-full">
         <SearchContainer search={search} setSearch={setSearch} />
-        <Country setCountry={setCountry} />
+        <Country />
         <PlayList videos={videos} filterVideos={filterVideos} />
       </section>
     </>

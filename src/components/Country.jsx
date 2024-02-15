@@ -1,7 +1,11 @@
+import { useDispatch } from "react-redux";
+import { countryCode } from "../utils/countrySlice";
+
 /* eslint-disable react/prop-types */
-const Country = ({ setCountry }) => {
+const Country = () => {
+  const dispatch = useDispatch();
   const handleSelectOption = (event) => {
-    setCountry(event.target.value);
+    dispatch(countryCode(event.target.value));
   };
   return (
     <>
