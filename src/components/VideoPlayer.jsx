@@ -182,20 +182,20 @@ const VideoPlayer = () => {
         <section className="bg-purple-50 container mx-auto rounded-xl w-4/5 md:w-4/5 lg:w-3/5 p-5 mt-2 flex gap-2 items-center justify-center">
           <button onClick={() => setIsPlaying(!isPlaying)}>
             {isPlaying ? (
-              <CiPause1 className="text-sky-700 w-6 h-6" />
+              <CiPause1 className="text-sky-700 md:w-6 md:h-6 w-3 h-3" />
             ) : (
-              <CiPlay1 className="text-sky-700 w-6 h-6" />
+              <CiPlay1 className="text-sky-700 md:w-6 md:h-6 h-3 w-3" />
             )}
           </button>
           <MdOutlineKeyboardDoubleArrowLeft
-            className="w-6 h-6 text-sky-700 hover:cursor-pointer"
+            className="md:w-6 md:h-6 w-5 h-5 text-sky-700 hover:cursor-pointer"
             onClick={() => handleSeek(-10)}
           />
           <MdOutlineKeyboardDoubleArrowRight
-            className="w-6 h-6 text-sky-700 hover:cursor-pointer"
+            className="md:w-6 md:h-6 w-5 h-5 text-sky-700 hover:cursor-pointer"
             onClick={() => handleSeek(10)}
           />
-          <span className="hidden lg:block text-sky-700 font-semibold  text-base lg:visible">
+          <span className="hidden text-sky-700 font-semibold sm:block sm:text-xs md:text-base">
             {formatTime(currentTime)} / {formatTime(duration)}
           </span>
           <button onClick={handleMuteToggle} className="px-2">
@@ -215,7 +215,7 @@ const VideoPlayer = () => {
             onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
           />
           <article className="flex flex-row gap-2 justify-center items-center">
-            <IoPlaySkipForwardSharp className="w-6 h-6 text-sky-700" />
+            <IoPlaySkipForwardSharp className="md:w-6 md:h-6 w-3 h-3 text-sky-700" />
             <select
               className="text-sky-700 font-semibold border-none outline-none rounded-xl p-1"
               value={speed}
@@ -232,7 +232,7 @@ const VideoPlayer = () => {
             </select>
           </article>
           <RiFullscreenFill
-            className="text-sky-700 w-6 h-6 hover:cursor-pointer ml-2"
+            className="text-sky-700 md:w-6 md:h-6 h-6 w-6 hover:cursor-pointer ml-2"
             onClick={() => handleFullScreen()}
           />
         </section>
