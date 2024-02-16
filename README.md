@@ -46,10 +46,11 @@ Fetching the most popular videos of Youtube of different countries, by default I
 Navigate through the application and explore the various video playback features.
 Adjust volume, enter full-screen mode, and toggle between mute and unmute.
 Explore videos based on your country, and switch between day and night modes.
-## Project Link
+
 ## Lighthouse performance
 ![image](https://github.com/Syed-Mohd-Azam/Video-Player-Project/assets/112909412/c3d9dac8-cbbe-4e27-a2ed-1b651a126ccd)
 
+## Project Link
 🎉Project Link on Netlify: https://mellow-piroshki-4e2159.netlify.app/
 
 ## Happy Coding💻 !
