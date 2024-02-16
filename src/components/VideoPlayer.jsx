@@ -259,7 +259,7 @@ const VideoPlayer = () => {
           <article className="flex flex-row gap-2 justify-center items-center">
             <IoPlaySkipForwardSharp className="md:w-6 md:h-6 w-3 h-3 text-sky-700" />
             <select
-              className="text-sky-700 font-semibold border-none outline-none rounded-xl p-1"
+              className="text-sky-700 font-semibold border-none outline-none rounded-md outline outline-1 outline-sky-400 p-1"
               value={speed}
               onChange={(e) => handleSpeedChange(parseFloat(e.target.value))}
             >
