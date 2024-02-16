@@ -165,7 +165,7 @@ const VideoPlayer = () => {
           )}
         </section>
         <section className=" w-full lg:container relative">
-          <article className=" absolute top-0 left-1/2 transform -translate-x-1/2 bg-black w-4/5 md:w-3/5 container mx-auto h-14  px-10 py-3 italic tracking-wider text-cyan-400 md:text-2xl text-xl font-mono hover:cursor-pointer">
+          <article className=" absolute top-0 left-1/2 transform -translate-x-1/2 bg-black w-4/5 md:w-3/5 container mx-auto h-14  px-10 py-3 italic tracking-wider text-slate-300 md:text-2xl text-xl font-mono hover:cursor-pointer">
             {title}
           </article>
           <ReactPlayer
