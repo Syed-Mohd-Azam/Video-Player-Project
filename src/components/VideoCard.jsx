@@ -17,7 +17,16 @@ const VideoCard = ({
     <>
       <section className="  gap-3 w-80 h-96 mt-6">
         <article className="w-full h-1/2">
-          <Link to={"/watch?v=" + id}>
+          <Link
+            to={
+              "/watch?v=" +
+              id +
+              "&title=" +
+              channelTitle +
+              "&description=" +
+              title
+            }
+          >
             <img
               className=" rounded-xl hover:cursor-pointer hover:scale-90"
               src={url}

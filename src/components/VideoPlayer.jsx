@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import { BsToggleOn } from "react-icons/bs";
@@ -40,6 +41,8 @@ const VideoPlayer = () => {
   // eslint-disable-next-line no-unused-vars
   const [search, setSearch] = useSearchParams();
   const videoId = search.get("v");
+  const title = search.get("title");
+  const description = search.get("description");
   console.log(videoId);
   const youtubeConfig = {
     youtube: {
@@ -161,7 +164,10 @@ const VideoPlayer = () => {
             </>
           )}
         </section>
-        <section className=" w-full lg:container ">
+        <section className=" w-full lg:container relative">
+          <article className=" absolute top-0 left-1/2 transform -translate-x-1/2 bg-black w-4/5 md:w-3/5 container mx-auto h-14  px-10 py-3 italic tracking-wider text-cyan-400 md:text-2xl text-xl font-mono hover:cursor-pointer">
+            {title}
+          </article>
           <ReactPlayer
             className="w-4/5 md:w-3/5 lg:h-96 sm:h-72 h-48 container mx-auto  hover:cursor-pointer "
             url={"https://www.youtube.com/watch?v=" + videoId}
@@ -178,6 +184,42 @@ const VideoPlayer = () => {
             playbackRate={speed}
             onEnded={handleEnded}
           />
+          <article className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-[50px] bg-black w-4/5 md:w-3/5 container mx-auto text-white px-10 py-3">
+            <section className="flex gap-2 w-full items-center md:hidden">
+              <p className="text-sky-400 font-semibold text-xs">
+                {" "}
+                {formatTime(currentTime)}
+              </p>
+              <input
+                type="range"
+                value={currentTime}
+                min="0"
+                max={duration}
+                step="1"
+                // onChange={handleTimeChange}
+                className="appearance-none w-48 bg-gray-300 rounded-full overflow-hidden h-1"
+              />
+              <p className="text-sky-400 font-semibold text-xs">
+                {formatTime(duration)}
+              </p>
+              <button onClick={handleMuteToggle} className="px-2">
+                {muted ? (
+                  <BiSolidVolumeMute className="text-sky-400 w-3 h-3 lg:w-6 lg:h-6 font-semibold" />
+                ) : (
+                  <GoUnmute className="text-sky-400 lg:w-6 lg:h-6 w-3 h-3 font-semibold" />
+                )}
+              </button>
+              <input
+                className="appearance-none w-48 bg-gray-300 h-1 rounded-full overflow-hidden"
+                type="range"
+                min={0}
+                max={1}
+                step={0.1}
+                value={volume}
+                onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
+              />
+            </section>
+          </article>
         </section>
         <section className="bg-purple-50 container mx-auto rounded-xl w-4/5 md:w-4/5 lg:w-3/5 p-5 mt-2 flex gap-2 items-center justify-center">
           <button onClick={() => setIsPlaying(!isPlaying)}>
