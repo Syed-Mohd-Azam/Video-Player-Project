@@ -3,7 +3,6 @@ import Shimmer from "./Shimmer";
 import VideosContainer from "./VideosContainer";
 // eslint-disable-next-line no-unused-vars
 const PlayList = ({ videos, filterVideos }) => {
-  console.log(filterVideos);
   return (
     <section>
       <article className="py-5 flex justify-center items-center">
