@@ -248,7 +248,7 @@ const VideoPlayer = () => {
             )}
           </button>
           <input
-            className="hover:cursor-pointer hidden md:block"
+            className="hover:cursor-pointer hidden md:block h-1"
             type="range"
             min={0}
             max={1}
