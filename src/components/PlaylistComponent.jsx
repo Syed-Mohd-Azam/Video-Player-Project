@@ -4,12 +4,15 @@ import PlayList from "./PlayList";
 import { YOUTUBE_API } from "../constants/constants";
 import { API_KEY } from "../constants/constants";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { updateVideos } from "../utils/videosSlice";
+
 const PlaylistComponent = () => {
   const country = useSelector((state) => state?.country?.countryToken);
-  const [videos, setVideos] = useState([]);
+  const videos = useSelector((state) => state?.videos?.videosList);
   const [filterVideos, setFilterVideos] = useState([]);
   const [search, setSearch] = useState("");
+  const dispatch = useDispatch();
   useEffect(() => {
     fetchVideos(country);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -34,7 +37,7 @@ const PlaylistComponent = () => {
   const fetchVideos = async (country) => {
     const data = await fetch(YOUTUBE_API + country + API_KEY);
     const jsonData = await data.json();
-    setVideos(jsonData?.items);
+    dispatch(updateVideos(jsonData?.items));
     setFilterVideos(jsonData?.items);
   };
   return (
