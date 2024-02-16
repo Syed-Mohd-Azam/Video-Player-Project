@@ -16,12 +16,12 @@ const Country = () => {
         >
           <option value="IN">Select Country</option>
           <option value="IN">India</option>
-          <option value="PK">Pakistan</option>
+          <option value="SA">Saudia Arabia</option>
           <option value="US">United States</option>
           <option value="CA">Canada</option>
           <option value="GB">United Kingdom</option>
           <option value="DE">Germany</option>
-          <option value="JP">Japan</option>
+          <option value="RU">Russia</option>
           <option value="AU">Australia</option>
         </select>
       </section>
