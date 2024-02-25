@@ -23,7 +23,7 @@ const VideosContainer = ({ filterVideos }) => {
   };
   return (
     <>
-      <section className="flex flex-wrap gap-8 justify-center items-center pb-20 pt-10">
+      <section className="flex flex-wrap gap-8 justify-center items-center pb-20 pt-10 px-1">
         {videoList?.map((video, index) => (
           <VideoWrapper
             key={video?.id}
