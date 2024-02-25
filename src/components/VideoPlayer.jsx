@@ -185,39 +185,43 @@ const VideoPlayer = () => {
             onEnded={handleEnded}
           />
           <article className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-[50px] bg-black w-4/5 md:w-3/5 container mx-auto text-white px-10 py-3">
-            <section className="flex gap-2 w-full items-center md:hidden">
-              <p className="text-sky-400 font-semibold text-xs">
-                {" "}
-                {formatTime(currentTime)}
-              </p>
-              <input
-                type="range"
-                value={currentTime}
-                min="0"
-                max={duration}
-                step="1"
-                // onChange={handleTimeChange}
-                className="appearance-none w-48 bg-gray-300 rounded-full overflow-hidden h-1"
-              />
-              <p className="text-sky-400 font-semibold text-xs">
-                {formatTime(duration)}
-              </p>
-              <button onClick={handleMuteToggle} className="px-2">
-                {muted ? (
-                  <BiSolidVolumeMute className="text-sky-400 w-3 h-3 lg:w-6 lg:h-6 font-semibold" />
-                ) : (
-                  <GoUnmute className="text-sky-400 lg:w-6 lg:h-6 w-3 h-3 font-semibold" />
-                )}
-              </button>
-              <input
-                className="appearance-none w-48 bg-gray-300 h-1 rounded-full overflow-hidden"
+            <section className="flex gap-2 w-full justify-between items-center md:hidden">
+              <article className="flex gap-2 w-full items-center">
+                <p className="text-sky-400 font-semibold text-xs">
+                  {" "}
+                  {formatTime(currentTime)}
+                </p>
+                <input
+                  type="range"
+                  value={currentTime}
+                  min="0"
+                  max={duration}
+                  step="1"
+                  // onChange={handleTimeChange}
+                  className="appearance-none w-48 bg-gray-300 rounded-full overflow-hidden h-1"
+                />
+                <p className="text-sky-400 font-semibold text-xs">
+                  {formatTime(duration)}
+                </p>
+              </article>
+              <article className="flex items-center">
+                <button onClick={handleMuteToggle} className="px-2">
+                  {muted ? (
+                    <BiSolidVolumeMute className="text-sky-400 w-4 h-4 font-bold mr-2" />
+                  ) : (
+                    <GoUnmute className="text-sky-400  w-4 h-4 font-bold mr-2" />
+                  )}
+                </button>
+              </article>
+              {/* <input
+                className="hidden md:block appearance-none w-48 bg-gray-300 h-1 rounded-full overflow-hidden"
                 type="range"
                 min={0}
                 max={1}
                 step={0.1}
                 value={volume}
                 onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
-              />
+              /> */}
             </section>
           </article>
         </section>
