@@ -198,7 +198,7 @@ const VideoPlayer = () => {
                   max={duration}
                   step="1"
                   // onChange={handleTimeChange}
-                  className="appearance-none w-48 bg-gray-300 rounded-full overflow-hidden h-1"
+                  className="appearance-none w-48 bg-gray-300 rounded-full overflow-hidden h-[1px]"
                 />
                 <p className="text-sky-400 font-semibold text-xs">
                   {formatTime(duration)}
