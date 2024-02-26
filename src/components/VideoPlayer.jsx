@@ -185,9 +185,9 @@ const VideoPlayer = () => {
             onEnded={handleEnded}
           />
           <article className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-[50px] bg-black w-4/5 md:w-3/5 container mx-auto text-white px-10 py-3">
-            <section className="flex gap-2 w-full justify-between items-center md:hidden">
+            <section className="flex gap-2 w-4/5 mx-auto justify-between items-center md:hidden">
               <article className="flex gap-2 w-full items-center">
-                <p className="text-sky-400 font-semibold text-xs">
+                <p className="text-purple-50 font-semibold text-xs">
                   {" "}
                   {formatTime(currentTime)}
                 </p>
@@ -200,16 +200,16 @@ const VideoPlayer = () => {
                   // onChange={handleTimeChange}
                   className="appearance-none w-48 bg-gray-300 rounded-full overflow-hidden h-[1px]"
                 />
-                <p className="text-sky-400 font-semibold text-xs">
+                <p className="text-purple-50 font-semibold text-xs">
                   {formatTime(duration)}
                 </p>
               </article>
               <article className="flex items-center">
                 <button onClick={handleMuteToggle} className="px-2">
                   {muted ? (
-                    <BiSolidVolumeMute className="text-sky-400 w-4 h-4 font-bold mr-2" />
+                    <BiSolidVolumeMute className="text-purple-50 w-4 h-4 font-bold mr-2" />
                   ) : (
-                    <GoUnmute className="text-sky-400  w-4 h-4 font-bold mr-2" />
+                    <GoUnmute className="text-purple-50  w-4 h-4 font-bold mr-2" />
                   )}
                 </button>
               </article>
