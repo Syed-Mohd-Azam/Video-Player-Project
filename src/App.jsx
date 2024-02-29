@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <DndProvider backend={HTML5Backend}>
-        <section className={dark === true ? "bg-[#192734]" : "bg-white"}>
+        <section className={dark === true ? "bg-[#192734]" : "bg-purple-50"}>
           <section className="w-full min-h-screen mx-auto">
             <RouterProvider router={router} />
           </section>
