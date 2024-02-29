@@ -225,7 +225,7 @@ const VideoPlayer = () => {
             </section>
           </article>
         </section>
-        <section className="bg-purple-50 container mx-auto rounded-xl w-11/12 sm:w-4/5 md:w-4/5 lg:w-3/5 sm:p-5 mt-2 flex gap-2 items-center justify-center p-5">
+        <section className="bg-purple-100 container mx-auto rounded-xl w-11/12 sm:w-4/5 md:w-4/5 lg:w-3/5 sm:p-5 mt-4 flex gap-2 items-center justify-center p-5 shadow-xl ">
           <button onClick={() => setIsPlaying(!isPlaying)}>
             {isPlaying ? (
               <CiPause1 className="text-sky-700  min-w-4 min-h-4 w-6 h-6" />
