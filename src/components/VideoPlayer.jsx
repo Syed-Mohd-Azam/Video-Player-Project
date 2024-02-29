@@ -228,7 +228,7 @@ const VideoPlayer = () => {
         <section className="bg-purple-50 container mx-auto rounded-xl w-11/12 sm:w-4/5 md:w-4/5 lg:w-3/5 sm:p-5 mt-2 flex gap-2 items-center justify-center p-5">
           <button onClick={() => setIsPlaying(!isPlaying)}>
             {isPlaying ? (
-              <CiPause1 className="text-sky-700  min-w-5 min-h-5 w-6 h-6" />
+              <CiPause1 className="text-sky-700  min-w-4 min-h-4 w-6 h-6" />
             ) : (
               <CiPlay1 className="text-sky-700  min-w-h-5 min-w-5 w-6 h-6" />
             )}
@@ -261,7 +261,7 @@ const VideoPlayer = () => {
             onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
           />
           <article className="flex flex-row gap-2 justify-center items-center">
-            <IoPlaySkipForwardSharp className=" w-5 h-5 text-sky-700 mr-2" />
+            <IoPlaySkipForwardSharp className="min-w-4 min-h-4 w-5 h-5 text-sky-700 mr-2" />
             <select
               className="text-sky-700 font-semibold border-none outline-none rounded-md outline outline-1 outline-sky-400 p-1"
               value={speed}
@@ -278,7 +278,7 @@ const VideoPlayer = () => {
             </select>
           </article>
           <RiFullscreenFill
-            className="text-sky-700  h-5 w-5 hover:cursor-pointer ml-2"
+            className="text-sky-700 h-5 w-5  min-h-4 min-w-4 hover:cursor-pointer ml-2"
             onClick={() => handleFullScreen()}
           />
         </section>
