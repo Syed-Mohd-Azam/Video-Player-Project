@@ -20,11 +20,11 @@ Fetching the most popular videos of Youtube of different countries, by default I
 - Advanced Controls: Users can adjust volume, toggle full-screen mode, and mute/unmute videos.
 - Day/Night Mode: Enhances user comfort with a toggleable day and night mode.
   
-## Third Part Libraries used in Application
+## Third Part Libraries used in Application!
  - React Player for playing the videos and add own custom functionalities.
  - react-dnd and react-dnd-html5-backend are popular libraries to drag and drop the videos.
 
-## Setup
+## Setup!
 
 1. Clone the repository:
 
