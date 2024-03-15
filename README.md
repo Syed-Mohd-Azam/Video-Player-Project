@@ -20,11 +20,11 @@ Fetching the most popular videos of Youtube of different countries, by default I
 - Advanced Controls: Users can adjust volume, toggle full-screen mode, and mute/unmute videos.
 - Day/Night Mode: Enhances user comfort with a toggleable day and night mode.
   
-## Third Part Libraries used in Application!
+## Third Part Libraries used in Application !!
  - React Player for playing the videos and add own custom functionalities.
  - react-dnd and react-dnd-html5-backend are popular libraries to drag and drop the videos.
 
-## Setup!
+## Setup !!
 
 1. Clone the repository:
 
@@ -50,7 +50,7 @@ Explore videos based on your country, and switch between day and night modes.
 ## Lighthouse performance
 ![image](https://github.com/Syed-Mohd-Azam/Video-Player-Project/assets/112909412/c3d9dac8-cbbe-4e27-a2ed-1b651a126ccd)
 
-## Project Link
+## Project Link !!
 🎉Project Link on Netlify: https://mellow-piroshki-4e2159.netlify.app/
 
 ## Happy Coding💻 !
