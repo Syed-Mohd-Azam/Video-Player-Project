@@ -53,4 +53,4 @@ Explore videos based on your country, and switch between day and night modes.
 ## Project Link 🎉
 🎉Project Link on Netlify: https://mellow-piroshki-4e2159.netlify.app/
 
-## Happy Coding💻 
+## 😎Happy Coding💻 🙂
