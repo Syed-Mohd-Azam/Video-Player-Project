@@ -50,7 +50,7 @@ Explore videos based on your country, and switch between day and night modes.
 ## Lighthouse performance
 ![image](https://github.com/Syed-Mohd-Azam/Video-Player-Project/assets/112909412/c3d9dac8-cbbe-4e27-a2ed-1b651a126ccd)
 
-## Project Link 
+## 🚀Project Link 
 🎉Project Link on Netlify: https://mellow-piroshki-4e2159.netlify.app/
 
 ## Happy Coding💻 
