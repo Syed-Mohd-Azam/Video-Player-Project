@@ -1,4 +1,4 @@
-# 🚀ReactTube Player - Video Player Application 🧡!!
+# 🚀ReactTube Player - Video Player Application 🧡!
 
 This is a React-based video player application built with Vite. The app fetches videos from the YouTube API and provides a customizable and responsive video player experience. It incorporates various features, including custom video controls, volume adjustments, full-screen options, mute/unmute functionality, country-wise video fetching, and a day/night mode.
 Fetching the most popular videos of Youtube of different countries, by default Indian videos are stored in redux store as soon as different country is selected, the fetch API fetches the most popular videos of that country and stores or overrides the videos of current one, and so on. There is also a drag and dro functionality which reorders the sequence of videos as fetched earlier, but it is stored until the new videos of differnt country comes and replace them.
