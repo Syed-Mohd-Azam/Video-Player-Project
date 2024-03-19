@@ -11,7 +11,7 @@ Fetching the most popular videos of Youtube of different countries, by default I
 - Tailwind CSS: Utility-first CSS framework for styling.
 - YouTube API: Used for fetching video data.
 
-## Features !!
+## Features 
 
 - Custom Controls: Tailored video playback controls for an intuitive user experience.
 - Autoplay: Implemented autoplay, allowing videos to start automatically and pause when they reach the end.
