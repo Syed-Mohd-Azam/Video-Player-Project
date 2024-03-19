@@ -24,7 +24,7 @@ Fetching the most popular videos of Youtube of different countries, by default I
  - React Player for playing the videos and add own custom functionalities.
  - react-dnd and react-dnd-html5-backend are popular libraries to drag and drop the videos.
 
-## Setup !!
+## Setup 
 
 1. Clone the repository:
 
